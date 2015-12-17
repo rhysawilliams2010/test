@@ -12,13 +12,18 @@ namespace test
 	    public void TestMe()
 	    {
 		    var something = true;
-		    var somethingElse = false;
+		    var somethingElse = true;
 		    if (something && somethingElse)
 		    {
 			    something = false;
 				TestMe();
 		    }
-		    throw new Exception("hello");
+			if (something && somethingElse)
+			{
+				something = false;
+				TestMe();
+			}
+			throw new Exception("hello");
 	    }
     }
 }
